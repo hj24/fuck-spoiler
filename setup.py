@@ -18,7 +18,7 @@ URL = 'https://github.com/hj24/fuck-spoiler'
 EMAIL = 'mambahj24@gmail.com'
 AUTHOR = 'hj24'
 REQUIRES_PYTHON = '>=3.6.0'
-VERSION = '0.1.0'
+VERSION = '0.1.1'
 
 # What packages are required for this module to be executed?
 REQUIRED = [
@@ -108,7 +108,7 @@ setup(
     # py_modules=['mypackage'],
 
     entry_points={
-        'console_scripts': ['fuck=manage:main'],
+        'console_scripts': ['fuck=cli:main'],
     },
     install_requires=REQUIRED,
     extras_require=EXTRAS,
