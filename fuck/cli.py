@@ -1,4 +1,4 @@
-import manage
+from .manage import _main
 
 def main():
-    manage.main()
+    _main()
