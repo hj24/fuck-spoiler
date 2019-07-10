@@ -131,4 +131,4 @@ dmypy.json
 /.pytest_cache
 
 # itchat临时文件
-/itchat.pkl
+itchat.pkl
