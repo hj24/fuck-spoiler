@@ -18,7 +18,7 @@ URL = 'https://github.com/hj24/fuck-spoiler'
 EMAIL = 'mambahj24@gmail.com'
 AUTHOR = 'hj24'
 REQUIRES_PYTHON = '>=3.6.0'
-VERSION = '0.1.2'
+VERSION = '0.1.3'
 
 # What packages are required for this module to be executed?
 REQUIRED = [
@@ -105,7 +105,7 @@ setup(
     url=URL,
     packages=find_packages(exclude=["tests", "*.tests", "*.tests.*", "tests.*"]),
     # If your package is a single module, use this instead of 'packages':
-    # py_modules=['mypackage'],
+    py_modules=['cli'],
 
     entry_points={
         'console_scripts': ['fuck=cli:main'],
