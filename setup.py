@@ -18,7 +18,7 @@ URL = 'https://github.com/hj24/fuck-spoiler'
 EMAIL = 'mambahj24@gmail.com'
 AUTHOR = 'hj24'
 REQUIRES_PYTHON = '>=3.6.0'
-VERSION = '0.1.5'
+VERSION = '0.1.6'
 
 # What packages are required for this module to be executed?
 REQUIRED = [
