@@ -1,5 +1,7 @@
 from crawler import crawler
+from utils import rules
 import jieba
+import jieba.analyse
 import itchat
 import argparse
 
@@ -11,31 +13,40 @@ WARNING_REPLY = """
 
 WARNING_KEYWORDS = []
 
-def check_msg(msg):
+def check_msg(msg, warning):
     keyword_list = jieba.cut(msg)
 
-    for word in keyword_list:
-        if word in WARNING_KEYWORDS:
+    final_key = set(keyword_list) - rules.symbols
+    warning_set = set(warning)
+
+    for word in final_key:
+        if word in warning_set:
             return True
     return False
 
 
 @itchat.msg_register(itchat.content.TEXT)
 def text_reply(msg):
+
     from_friend = itchat.search_friends(userName=msg["FromUserName"])["NickName"]
-    print(from_friend)
-    if check_msg(msg["Text"]):
+
+    # print(WARNING_KEYWORDS)
+
+    if check_msg(msg["Text"], WARNING_KEYWORDS):
         print(f"WARNING! 这条消息涉嫌剧透,现已自动屏蔽 FROM：{from_friend}")
         return WARNING_REPLY
 
 def detect(name):
-    print('运行了？')
     spider = crawler.DouBan(name)
-    keys = jieba.cut(spider.fetch())
-    return keys
+    content = spider.fetch()
+
+    core_keys = jieba.analyse.extract_tags(content, topK=20, withWeight=False, allowPOS=('n',))
+
+    return core_keys
 
 def main():
     __usage__ = '防剧透机器人'
+
     parser = argparse.ArgumentParser(description=__usage__)
     parser.add_argument('name')
     args = parser.parse_args()
@@ -44,15 +55,8 @@ def main():
     keys = detect(args.name)
     WARNING_KEYWORDS.extend(keys)
 
-    print(WARNING_KEYWORDS)
-
     itchat.auto_login(hotReload=True)
     itchat.run()
 
-
-
 if __name__ == "__main__":
     main()
-
-
-
