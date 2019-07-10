@@ -105,10 +105,10 @@ setup(
     url=URL,
     packages=find_packages(exclude=["tests", "*.tests", "*.tests.*", "tests.*"]),
     # If your package is a single module, use this instead of 'packages':
-    py_modules=['cli'],
+    # py_modules=['cli'],
 
     entry_points={
-        'console_scripts': ['fuck=cli:main'],
+        'console_scripts': ['fuck=fuck.cli:main'],
     },
     install_requires=REQUIRED,
     extras_require=EXTRAS,
