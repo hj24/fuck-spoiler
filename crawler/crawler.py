@@ -22,7 +22,6 @@ class DouBan:
             print(e)
 
     def parse_link(self, content):
-
         soup = BeautifulSoup(content, settings.PARSER)
         a_tag = soup.find_all('h3')[0].a
         return a_tag['href']
