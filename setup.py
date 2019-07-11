@@ -17,17 +17,18 @@ DESCRIPTION = 'An anti-spoiler wechat robot'
 URL = 'https://github.com/hj24/fuck-spoiler'
 EMAIL = 'mambahj24@gmail.com'
 AUTHOR = 'hj24'
-REQUIRES_PYTHON = '>=3.6.0'
-VERSION = '1.0.0'
+REQUIRES_PYTHON = '>=3.0.0'
+VERSION = '1.0.2'
 
 # What packages are required for this module to be executed?
 REQUIRED = [
-    'requests', 'pytest', 'lxml', 'beautifulsoup4', 'itchat', 'jieba',
+    'requests', 'beautifulsoup4', 'itchat', 'jieba',
 ]
 
 # What packages are optional?
 EXTRAS = {
     # 'fancy feature': ['django'],
+    'dont choose if u are not developer': ['pytest'],
 }
 
 # The rest you shouldn't have to touch too much :)

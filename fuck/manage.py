@@ -33,7 +33,7 @@ def text_reply(msg):
     # print(WARNING_KEYWORDS)
 
     if check_msg(msg["Text"], WARNING_KEYWORDS):
-        print(f"WARNING! 这条消息涉嫌剧透,现已自动屏蔽 FROM：{from_friend}")
+        print("WARNING! 这条消息涉嫌剧透,现已自动屏蔽 FROM: %s" % from_friend)
         return WARNING_REPLY
 
 def detect(name):
