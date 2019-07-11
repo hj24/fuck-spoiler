@@ -13,12 +13,12 @@ from setuptools import find_packages, setup, Command
 
 # Package meta-data.
 NAME = 'fuck-spoiler'
-DESCRIPTION = 'An anti-spoiler wechat robot'
+DESCRIPTION = 'An anti spoiler wechat robot.'
 URL = 'https://github.com/hj24/fuck-spoiler'
 EMAIL = 'mambahj24@gmail.com'
 AUTHOR = 'hj24'
 REQUIRES_PYTHON = '>=3'
-VERSION = '1.0.6'
+VERSION = '1.0.7'
 
 # What packages are required for this module to be executed?
 REQUIRED = [
@@ -28,7 +28,6 @@ REQUIRED = [
 # What packages are optional?
 EXTRAS = {
     # 'fancy feature': ['django'],
-    'dont choose if u are not developer': ['pytest'],
 }
 
 # The rest you shouldn't have to touch too much :)
@@ -106,7 +105,7 @@ setup(
     url=URL,
     packages=find_packages(exclude=["tests", "*.tests", "*.tests.*", "tests.*"]),
     # If your package is a single module, use this instead of 'packages':
-    # py_modules=['cli'],
+    # py_modules=['mypackage'],
 
     entry_points={
         'console_scripts': ['fuck=fuck.cli:main'],
