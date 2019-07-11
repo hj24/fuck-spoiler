@@ -14,10 +14,12 @@ WARNING_REPLY = """
 WARNING_KEYWORDS = []
 
 def check_msg(msg, warning):
-    keyword_list = jieba.cut(msg)
+    keyword_list = jieba.analyse.extract_tags(msg, topK=20, withWeight=False, allowPOS=('n', 'ns'))
 
     final_key = set(keyword_list) - rules.symbols
     warning_set = set(warning)
+
+    print(final_key)
 
     for word in final_key:
         if word in warning_set:
@@ -40,7 +42,7 @@ def detect(name):
     spider = crawler.DouBan(name)
     content = spider.fetch()
 
-    core_keys = jieba.analyse.extract_tags(content, topK=20, withWeight=False, allowPOS=('n',))
+    core_keys = jieba.analyse.extract_tags(content, topK=100, withWeight=False, allowPOS=('n', 'ns'))
 
     return core_keys
 
