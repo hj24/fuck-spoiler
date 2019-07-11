@@ -45,3 +45,7 @@ e.g: `fuck 蜘蛛侠`
 ![](https://ws2.sinaimg.cn/large/006tNc79ly1g4v1teql2xj30hs0vkjtb.jpg)
 
 ![](https://ws2.sinaimg.cn/large/006tNc79ly1g4v1spf85qj30hs0vk0ux.jpg)
+
+## ToDo
+
+分词结果还不够准确
