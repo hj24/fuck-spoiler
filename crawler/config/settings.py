@@ -10,4 +10,4 @@ CRAWLER_HEADERS = {
 }
 
 # beautifulsoup解析器
-PARSER = 'lxml'
+PARSER = 'html.parser'
